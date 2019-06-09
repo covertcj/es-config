@@ -1,21 +1,19 @@
 # es-config
 
-Simple, modern TypeScript/JavaScript tooling configuration common to many of
-my projects.
+Simple, modern JavaScript tooling configuration common to many of my projects.
 
 ## Setup
 
 Install `@covertcj/es-config` and it's peer dependencies:
 
 ```
-npm i -D @covertcj/es-config @typescript-eslint/parser @typescript-eslint/eslint-plugin typescript eslint prettier eslint-config-prettier eslint-plugin-prettier
+npm i -D @covertcj/es-config eslint prettier eslint-config-prettier eslint-plugin-prettier
 ```
 
-Then you can optionally generate the required eslint/prettier files into
-your project (only supports typescript at the moment):
+Then copy the config templates into your project:
 
 ```bash
-npx bootstrap-es-config
+cp "node_modules/@covertcj/es-config/templates/*" ./
 ```
 
 And add an eslint runner to your `package.json`'s scripts:
@@ -23,7 +21,7 @@ And add an eslint runner to your `package.json`'s scripts:
 ```jsonc
 {
   "scripts": {
-    "lint": "tsc --noEmit && eslint --fix --ext .js,.ts src/"
+    "lint": "eslint --fix --ext .js,.ts src/"
   }
 }
 ```
